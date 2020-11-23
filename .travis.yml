@@ -1,0 +1,10 @@
+os: linux
+dist: focal
+language: bash
+services:
+  - docker
+script:
+  - ./build.sh build-image
+after_success:
+  - ./build.sh tag-image
+  - ./build.sh push-image
